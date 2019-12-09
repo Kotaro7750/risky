@@ -1,0 +1,12 @@
+*
+
+!./.gitignore
+!./LICENSE
+
+!src/
+!src/source/
+!src/sim/
+!src/source/*.v
+!src/source/*.vh
+!src/sim/*.v
+

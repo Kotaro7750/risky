@@ -1,0 +1,40 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2019/12/03 13:23:29
+// Design Name: 
+// Module Name: hardware_counter
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+module hardware_counter(
+    input CLK_IP,
+    input RSTN_IP,
+    output [31:0] COUNTER_OP
+);
+
+    reg [31:0] cycles;
+
+    always @(posedge CLK_IP or negedge RSTN_IP) begin
+        if(!RSTN_IP)begin
+            cycles <= 32'd0;
+        end else begin
+            cycles <= cycles + 1;
+        end
+    end
+
+    assign COUNTER_OP = cycles;
+
+endmodule
